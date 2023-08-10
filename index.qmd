@@ -1,0 +1,70 @@
+---
+title: 'Reliable maintenance of machine learning models'
+format:
+  revealjs: 
+    footer: <https://juliasilge.github.io/ml-maintenance-2023>
+    preview-links: auto
+    width: 1280
+    height: 720
+    incremental: true
+    code-line-numbers: false
+knitr:
+  opts_chunk: 
+    echo: true
+    collapse: true
+    comment: "#>"
+---
+
+## Hello!
+
+. . .
+
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands mastodon >}} \@juliasilge\@fosstodon.org](https://fosstodon.org/@juliasilge)
+
+[{{< fa brands youtube >}} youtube.com/juliasilge](https://www.youtube.com/juliasilge)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+## Outline
+
+- By measuring your inputs and outputs (doing)
+- You get a model that is easier to maintain (effect)
+- For resilient models that are successful in the long term (impact)
+
+
+## Learn more
+
+-   Documentation at <https://vetiver.rstudio.com/>
+
+-   [Webinar by Isabel Zimmerman and me](https://juliasilge.github.io/mlops-rstudio-meetup/) for Posit Enterprise Meetup
+
+-   End-to-end demos from Posit Solution Engineering in [R](https://github.com/sol-eng/bike_predict) and [Python](https://github.com/sol-eng/bike_predict_python)
+
+
+## Thank you!
+
+<center>
+
+<img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@juliasilge](https://github.com/juliasilge)
+
+[{{< fa brands mastodon >}} \@juliasilge\@fosstodon.org](https://fosstodon.org/@juliasilge)
+
+[{{< fa brands youtube >}} youtube.com/juliasilge](https://www.youtube.com/juliasilge)
+
+[{{< fa link >}} juliasilge.com](https://juliasilge.com/)
+
+</center>
+
+::: footer
+tktk image by <https://www.rawpixel.com/>
+:::
