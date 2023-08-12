@@ -33,14 +33,45 @@ knitr:
 
 </center>
 
+#  {background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg"}
+
+# Maintaining ML models is NOTHING LIKE THIS  {background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg" background-opacity=0.5}
+
+##  {background-image="images/image-from-rawpixel-id-8863371-original.jpg"}
+
+
 ## Outline
 
-- By measuring your inputs and outputs (doing)
+- Hook: unpacking suitcase vs. doing laundry
+  - All software products needs to be maintained
+  - Maintenance for a model typically means monitoring its performance
+- What does performance mean?
+  - ML model as a software artifact vs. a statistical artifact
+  - "We aren't even talking about the same thing"
+  - As data practitioners, we focus on monitoring statistical performance
+  - Failures in statistical performance will more often be _silent_
+- Model drift == data drift and/or concept drift
+- Data drift == statistical distribution of input feature changes
+  - About the **inputs**
+  - What can you monitor?
+    - Statistical distribution of features individually
+    - Statistical characteristics of features as a whole
+  - Example: 
+- Concept drift == change in the relationship between input features and outcome
+  - About the relationship between **inputs** and **outputs**
+  - What can you monitor?
+    - Model performance metrics, like RMSE or accuracy
+  - Example:
+  - Feedback loops
+- Stages of model monitoring maturity (https://www.nannyml.com/blog/5-levels-of-mlops-maturity)
+  - Manual
+  - Reproducible
+  - Automated
 - You get a model that is easier to maintain (effect)
 - For resilient models that are successful in the long term (impact)
 
 
-## Learn more
+## Learn more {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
 
 -   Documentation at <https://vetiver.rstudio.com/>
 
@@ -49,7 +80,16 @@ knitr:
 -   End-to-end demos from Posit Solution Engineering in [R](https://github.com/sol-eng/bike_predict) and [Python](https://github.com/sol-eng/bike_predict_python)
 
 
-## Thank you!
+## Thank you! {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
+
+Images by:
+
+::: {.nonincremental}
+- [Mohammed Gadi](https://unsplash.com/photos/2qCX0SsSwzs)
+- [Albert Edelfelt](https://www.rawpixel.com/image/8863371/image-art-public-domain-woman)
+:::
+
+## Thank you! 
 
 <center>
 
@@ -64,7 +104,3 @@ knitr:
 [{{< fa link >}} juliasilge.com](https://juliasilge.com/)
 
 </center>
-
-::: footer
-tktk image by <https://www.rawpixel.com/>
-:::
