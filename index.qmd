@@ -66,12 +66,40 @@ knitr:
     - Model performance metrics, like RMSE or accuracy
   - Example:
     - Show vetiver functions we have monitoring performance metrics
-  - Feedback loops
-- Stages of model monitoring maturity (https://www.nannyml.com/blog/5-levels-of-mlops-maturity)
-  - Manual
-  - Reproducible
-  - Automated
-    - vetiver has a dashboard template
+
+## Feedback loops 🔁
+
+Deployment of an ML model may *alter* the training data 
+
+. . .
+
+- Movie recommendation systems on Netflix, Disney+, Hulu
+- Identifying fraudulent credit card transactions at Stripe
+- Recidivism models
+
+::: footer
+[*Building Machine Learning Pipelines* by Hapke & Nelson](https://www.oreilly.com/library/view/building-machine-learning/9781492053187/)
+:::
+
+::: .notes
+Users take some action as a result of a prediction, users rate or correct the quality of a prediction, produce feedback automatically
+
+Example with Chicago data
+:::
+
+# Stages of model monitoring maturity
+
+- Manual
+- Reproducible
+- Automated
+
+::: footer
+[5 Levels of MLOps Maturity](https://www.nannyml.com/blog/5-levels-of-mlops-maturity)
+:::
+
+# vetive dashboard template
+
+
 - You get a model that is easier to maintain (effect)
 - For resilient models that are successful in the long term (impact)
 
