@@ -46,12 +46,61 @@ knitr:
   - All software products needs to be maintained
   - Model retraining
   - Maintenance for a model typically means monitoring its performance
-- What does performance mean?
-  - ML model as a software artifact vs. a statistical artifact
-  - "We aren't even talking about the same thing"
-  - As data practitioners, we focus on monitoring statistical performance
-  - Failures in statistical performance will more often be _silent_ (how bad can this be? very bad)
-- Model drift == data drift and/or concept drift
+
+
+# What does performance mean?
+
+::: {.notes}
+ML model as a software artifact vs. a statistical artifact
+:::
+
+## My model is performing well!
+
+. . .
+
+👩🏼‍🔧 My model returns predictions quickly, doesn't use too much memory or processing power, and doesn't have outages.
+
+
+::: {.notes}
+
+- latency
+- memory and CPU usage
+- uptime
+
+"We aren't even talking about the same thing"
+:::
+
+## My model is performing well! 
+
+. . .
+
+👩🏽‍🔬 My model returns predictions that are close to the true values for the predicted quantity.
+
+::: {.notes}
+
+- accuracy
+- ROC AUC
+- F1 score
+- RMSE
+- log loss
+
+As data practitioners, we focus on monitoring statistical performance
+:::
+
+# Failures in statistical performance can be **silent** {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
+
+::: {.notes}
+how bad can this be? very bad
+:::
+
+# MODEL DRIFT
+
+# DATA DRIFT
+
+# CONCEPT DRIFT
+
+## Outline
+
 - Data drift == statistical distribution of input feature changes
   - About the **inputs**
   - What can you monitor?
@@ -73,15 +122,22 @@ Deployment of an ML model may *alter* the training data
 
 . . .
 
+::: {.callout-note icon=false}
+
+## Examples
+
 - Movie recommendation systems on Netflix, Disney+, Hulu
 - Identifying fraudulent credit card transactions at Stripe
 - Recidivism models
+
+:::
+
 
 ::: footer
 [*Building Machine Learning Pipelines* by Hapke & Nelson](https://www.oreilly.com/library/view/building-machine-learning/9781492053187/)
 :::
 
-::: .notes
+::: {.notes}
 Users take some action as a result of a prediction, users rate or correct the quality of a prediction, produce feedback automatically
 
 Example with Chicago data
@@ -89,16 +145,35 @@ Example with Chicago data
 
 # Stages of model monitoring maturity
 
-- Manual
-- Reproducible
-- Automated
+. . .
+
+🙂 Manual
+
+. . .
+
+🤓 Reproducible
+
+. . .
+
+🤩 Automated
 
 ::: footer
 [5 Levels of MLOps Maturity](https://www.nannyml.com/blog/5-levels-of-mlops-maturity)
 :::
 
-# vetive dashboard template
+##
 
+![](images/dashboard1.png){fig-align="center"}
+
+##
+
+![](images/dashboard2.png){fig-align="center"}
+
+##
+
+![](images/dashboard3.png){fig-align="center"}
+
+## Summary
 
 - You get a model that is easier to maintain (effect)
 - For resilient models that are successful in the long term (impact)
@@ -106,23 +181,16 @@ Example with Chicago data
 
 ## Learn more {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
 
+::: {.nonincremental}
 -   Documentation at <https://vetiver.rstudio.com/>
 
 -   [Webinar by Isabel Zimmerman and me](https://juliasilge.github.io/mlops-rstudio-meetup/) for Posit Enterprise Meetup
 
 -   End-to-end demos from Posit Solution Engineering in [R](https://github.com/sol-eng/bike_predict) and [Python](https://github.com/sol-eng/bike_predict_python)
+:::
 
 
 ## Thank you! {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
-
-Images by:
-
-::: {.nonincremental}
-- [Mohammed Gadi](https://unsplash.com/photos/2qCX0SsSwzs)
-- [Albert Edelfelt](https://www.rawpixel.com/image/8863371/image-art-public-domain-woman)
-:::
-
-## Thank you! 
 
 <center>
 
@@ -137,3 +205,7 @@ Images by:
 [{{< fa link >}} juliasilge.com](https://juliasilge.com/)
 
 </center>
+
+::: footer
+Image credits: [Mohammed Gadi](https://unsplash.com/photos/2qCX0SsSwzs) & [Albert Edelfelt](https://www.rawpixel.com/image/8863371/image-art-public-domain-woman)
+:::
