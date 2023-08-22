@@ -40,18 +40,22 @@ knitr:
 ##  {background-image="images/image-from-rawpixel-id-8863371-original.jpg"}
 
 
-## Outline
+::: {.notes}
+Never-ending laundry process
 
-- Hook: unpacking suitcase vs. doing laundry
-  - All software products needs to be maintained
-  - Model retraining
-  - Maintenance for a model typically means monitoring its performance
+We need to decide when and how to retrain model
 
+We need to measure model performance
+:::
 
 # What does performance mean?
 
 ::: {.notes}
-ML model as a software artifact vs. a statistical artifact
+All software products need to be maintained, but models are both a software artifact *and* a statistical artifact
+
+Unlike something that is "only" a software product, you could, say, retrain your model with new data and change its statistical properties without changing its software properties
+
+Deciding when and how to retrain is part of this model maintenance process, and one of the most basic prerequisites for model maintenance is monitoring the model's performance
 :::
 
 ## My model is performing well!
@@ -61,12 +65,18 @@ ML model as a software artifact vs. a statistical artifact
 👩🏼‍🔧 My model returns predictions quickly, doesn't use too much memory or processing power, and doesn't have outages.
 
 
-::: {.notes}
+::: {.callout-note icon=false}
 
+## Metrics
+
+::: {.nonincremental}
 - latency
 - memory and CPU usage
 - uptime
+:::
 
+
+::: {.notes}
 "We aren't even talking about the same thing"
 :::
 
@@ -76,21 +86,29 @@ ML model as a software artifact vs. a statistical artifact
 
 👩🏽‍🔬 My model returns predictions that are close to the true values for the predicted quantity.
 
-::: {.notes}
 
+::: {.callout-note icon=false}
+
+## Metrics
+
+::: {.nonincremental}
 - accuracy
 - ROC AUC
 - F1 score
 - RMSE
 - log loss
+:::
 
+:::
+
+::: {.notes}
 As data practitioners, we focus on monitoring statistical performance
 :::
 
 # Failures in statistical performance can be **silent** {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
 
 ::: {.notes}
-how bad can this be? very bad
+How bad can this be? very bad
 :::
 
 # MODEL DRIFT
@@ -145,17 +163,12 @@ Example with Chicago data
 
 # Stages of model monitoring maturity
 
-. . .
 
-🙂 Manual
+1. Manual 🙂
 
-. . .
+2. Reproducible 🤓
 
-🤓 Reproducible
-
-. . .
-
-🤩 Automated
+3. Automated 🤩
 
 ::: footer
 [5 Levels of MLOps Maturity](https://www.nannyml.com/blog/5-levels-of-mlops-maturity)
