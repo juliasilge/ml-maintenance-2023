@@ -2,7 +2,7 @@
 title: 'Reliable maintenance of machine learning models'
 format:
   revealjs: 
-    theme: [night, custom.scss]
+    theme: [dark, custom.scss]
     footer: <https://juliasilge.github.io/ml-maintenance-2023>
     preview-links: auto
     width: 1280
@@ -34,9 +34,15 @@ knitr:
 
 #  {background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg"}
 
+:::footer
+:::
+
 # Maintaining ML models is NOTHING LIKE THIS  {background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg" background-opacity=0.3}
 
 ##  {background-image="images/image-from-rawpixel-id-8863371-original.jpg"}
+
+:::footer
+:::
 
 
 ::: {.notes}
