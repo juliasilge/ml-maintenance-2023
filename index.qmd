@@ -2,6 +2,7 @@
 title: 'Reliable maintenance of machine learning models'
 format:
   revealjs: 
+    theme: [night, custom.scss]
     footer: <https://juliasilge.github.io/ml-maintenance-2023>
     preview-links: auto
     width: 1280
@@ -16,8 +17,6 @@ knitr:
 ---
 
 ## Hello!
-
-. . .
 
 <center>
 
@@ -35,7 +34,7 @@ knitr:
 
 #  {background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg"}
 
-# Maintaining ML models is NOTHING LIKE THIS  {background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg" background-opacity=0.5}
+# Maintaining ML models is NOTHING LIKE THIS  {background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg" background-opacity=0.3}
 
 ##  {background-image="images/image-from-rawpixel-id-8863371-original.jpg"}
 
@@ -65,7 +64,9 @@ Deciding when and how to retrain is part of this model maintenance process, and 
 👩🏼‍🔧 My model returns predictions quickly, doesn't use too much memory or processing power, and doesn't have outages.
 
 
-::: {.callout-note icon=false}
+. . .
+
+::: {.callout-caution icon=false}
 
 ## Metrics
 
@@ -75,6 +76,7 @@ Deciding when and how to retrain is part of this model maintenance process, and 
 - uptime
 :::
 
+:::
 
 ::: {.notes}
 "We aren't even talking about the same thing"
@@ -86,8 +88,9 @@ Deciding when and how to retrain is part of this model maintenance process, and 
 
 👩🏽‍🔬 My model returns predictions that are close to the true values for the predicted quantity.
 
+. . .
 
-::: {.callout-note icon=false}
+::: {.callout-caution icon=false}
 
 ## Metrics
 
@@ -105,7 +108,7 @@ Deciding when and how to retrain is part of this model maintenance process, and 
 As data practitioners, we focus on monitoring statistical performance
 :::
 
-# Failures in statistical performance can be **silent** {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
+# Failures in statistical performance can be *silent* {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
 
 ::: {.notes}
 How bad can this be? very bad
@@ -140,7 +143,7 @@ Deployment of an ML model may *alter* the training data
 
 . . .
 
-::: {.callout-note icon=false}
+::: {.callout-caution icon=false}
 
 ## Examples
 
@@ -174,17 +177,26 @@ Example with Chicago data
 [5 Levels of MLOps Maturity](https://www.nannyml.com/blog/5-levels-of-mlops-maturity)
 :::
 
-##
+## {background-color="white"}
 
 ![](images/dashboard1.png){fig-align="center"}
 
-##
+:::footer
+:::
+
+## {background-color="white"}
 
 ![](images/dashboard2.png){fig-align="center"}
 
-##
+:::footer
+:::
+
+## {background-color="white"}
 
 ![](images/dashboard3.png){fig-align="center"}
+
+:::footer
+:::
 
 ## Summary
 
@@ -192,7 +204,7 @@ Example with Chicago data
 - For resilient models that are successful in the long term (impact)
 
 
-## Learn more {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
+## Learn more {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.3}
 
 ::: {.nonincremental}
 -   Documentation at <https://vetiver.rstudio.com/>
@@ -203,7 +215,7 @@ Example with Chicago data
 :::
 
 
-## Thank you! {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
+## Thank you! {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.3}
 
 <center>
 
