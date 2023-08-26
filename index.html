@@ -7,7 +7,7 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.340">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -321,11 +386,11 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-image="images/end_paper.jpg" data-background-opacity="0.2" class="quarto-title-block center">
   <h1 class="title">Reliable maintenance of machine learning models</h1>
 
 <div class="quarto-title-authors">
@@ -334,7 +399,6 @@
 </section>
 <section id="hello" class="slide level2">
 <h2>Hello!</h2>
-<div class="fragment">
 <center>
 <p><img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"></p>
 <p><a href="https://github.com/juliasilge"><i class="fa-brands fa-github" aria-label="github"></i> @juliasilge</a></p>
@@ -342,25 +406,390 @@
 <p><a href="https://www.youtube.com/juliasilge"><i class="fa-brands fa-youtube" aria-label="youtube"></i> youtube.com/juliasilge</a></p>
 <p><a href="https://juliasilge.com/"><i class="fa-solid fa-link" aria-label="link"></i> juliasilge.com</a></p>
 </center>
+</section>
+<section id="section" class="title-slide slide level1 center" data-background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg">
+<h1></h1>
+<div class="footer">
+
 </div>
 </section>
-<section id="outline" class="slide level2">
-<h2>Outline</h2>
-<ul>
-<li class="fragment">By measuring your inputs and outputs (doing)</li>
-<li class="fragment">You get a model that is easier to maintain (effect)</li>
-<li class="fragment">For resilient models that are successful in the long term (impact)</li>
-</ul>
+
+<section>
+<section id="maintaining-ml-models-is-nothing-like-this" class="title-slide slide level1 center" data-background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg" data-background-opacity="0.2">
+<h1>Maintaining ML models is NOTHING LIKE THIS</h1>
+
 </section>
-<section id="learn-more" class="slide level2">
+<section id="section-1" class="slide level2" data-background-image="images/image-from-rawpixel-id-8863371-original.jpg">
+<h2></h2>
+<div class="footer">
+
+</div>
+<aside class="notes">
+<p>Never-ending laundry process</p>
+<p>We need to decide when and how to retrain model</p>
+<p>We need to measure model performance</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="what-does-performance-mean" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
+<h1>What does performance mean?</h1>
+<aside class="notes">
+<p>All software products need to be maintained, but models are both a software artifact <em>and</em> a statistical artifact</p>
+<p>Unlike something that is “only” a software product, you could, say, retrain your model with new data and change its statistical properties without changing its software properties</p>
+<p>Deciding when and how to retrain is part of this model maintenance process, and one of the most basic prerequisites for model maintenance is monitoring the model’s performance</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="my-model-is-performing-well" class="slide level2">
+<h2>My model is performing well!</h2>
+<div class="fragment">
+<p>👩🏼‍🔧 My model returns predictions quickly, doesn’t use too much memory or processing power, and doesn’t have outages.</p>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Metrics</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ul>
+<li>latency</li>
+<li>memory and CPU usage</li>
+<li>uptime</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>“We aren’t even talking about the same thing”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="my-model-is-performing-well-1" class="slide level2">
+<h2>My model is performing well!</h2>
+<div class="fragment">
+<p>👩🏽‍🔬 My model returns predictions that are close to the true values for the predicted quantity.</p>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Metrics</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ul>
+<li>accuracy</li>
+<li>ROC AUC</li>
+<li>F1 score</li>
+<li>RMSE</li>
+<li>log loss</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>As data practitioners, we focus on monitoring statistical performance</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section></section>
+<section id="failures-in-statistical-performance-can-be-silent" class="title-slide slide level1 center" data-background-image="images/image-from-rawpixel-id-8863371-original.jpg" data-background-opacity="0.4">
+<h1>Failures in statistical performance can be <em>silent</em></h1>
+<aside class="notes">
+<p>How bad can this be? very bad</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="model-drift" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
+<h1>MODEL DRIFT</h1>
+<aside class="notes">
+<p>data drift vs.&nbsp;concept drift</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="data-drift" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
+<h1>DATA DRIFT</h1>
+<div class="fragment">
+<p>Monitor your <strong>inputs</strong></p>
+<aside class="notes">
+<p>Let’s say I run a laundry service, and I have built a model to predict someone’s likelihood to become my customer</p>
+<p>I use a bunch of predictors, like how many loads of laundry they need to do each month, their income, whether they live in a house or apartment, and a bunch of other things</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+
+<section id="monitor-your-inputs" class="title-slide slide level1 center" data-background-color="white">
+<h1>Monitor your inputs</h1>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+
+<section id="monitor-your-inputs-1" class="title-slide slide level1 center" data-background-color="white">
+<h1>Monitor your inputs</h1>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+
+<section id="monitor-your-inputs-2" class="title-slide slide level1 center" data-background-color="white">
+<h1>Monitor your inputs</h1>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>True/real changes in distribution vs.&nbsp;changes in data collection or similar</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="data-drift-1" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
+<h1>DATA DRIFT</h1>
+<p>Monitor your <strong>inputs</strong></p>
+</section>
+
+<section>
+<section id="concept-drift" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
+<h1>CONCEPT DRIFT</h1>
+<div class="fragment">
+<p>Monitor your <strong>outputs</strong></p>
+<aside class="notes">
+<p>Relationship between the input and output is changing over time</p>
+<p>In the city where I run a laundry service, the new apartments that are being built all have laundry in people’s units</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="monitor-your-outputs" class="slide level2" data-background-color="white">
+<h2>Monitor your outputs</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vetiver)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>laundry_service_monitoring <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vetiver_compute_metrics</span>(date, <span class="st">"week"</span>, customer, .pred)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 30 × 5</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    .index        .n .metric  .estimator .estimate</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;date&gt;     &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 2023-03-05    14 accuracy binary         0.857</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 2023-03-05    14 kap      binary         0.708</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 2023-03-09    34 accuracy binary         0.882</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 2023-03-09    34 kap      binary         0.767</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 2023-03-16    25 accuracy binary         0.8  </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 2023-03-16    25 kap      binary         0.525</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 2023-03-23    32 accuracy binary         0.844</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2023-03-23    32 kap      binary         0.685</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2023-03-30    36 accuracy binary         0.806</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2023-03-30    36 kap      binary         0.611</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 20 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="monitor-your-outputs-1" class="slide level2" data-background-color="white">
+<h2>Monitor your outputs</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vetiver)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>laundry_service_monitoring <span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vetiver_compute_metrics</span>(date, <span class="st">"week"</span>, customer, .pred) <span class="sc">|&gt;</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vetiver_plot_metrics</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="feedback-loops" class="slide level2">
+<h2>Feedback loops 🔁</h2>
+<p>Deployment of an ML model may <em>alter</em> the training data</p>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Examples</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Movie recommendation systems on Netflix, Disney+, Hulu</li>
+<li class="fragment">Identifying fraudulent credit card transactions at Stripe</li>
+<li class="fragment">Recidivism models</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.oreilly.com/library/view/building-machine-learning/9781492053187/"><em>Building Machine Learning Pipelines</em> by Hapke &amp; Nelson</a></p>
+</div>
+<aside class="notes">
+<p>Users take some action as a result of a prediction, users rate or correct the quality of a prediction, produce feedback automatically</p>
+<p>Example with Chicago data</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section></section>
+<section>
+<section id="stages-of-model-monitoring-maturity" class="title-slide slide level1 center">
+<h1>Stages of model monitoring maturity</h1>
+<ol type="1">
+<li class="fragment"><p>Manual 🙂</p></li>
+<li class="fragment"><p>Reproducible 🤓</p></li>
+<li class="fragment"><p>Automated 🤩</p></li>
+</ol>
+<div class="footer">
+<p><a href="https://www.nannyml.com/blog/5-levels-of-mlops-maturity">5 Levels of MLOps Maturity</a></p>
+</div>
+</section>
+<section id="section-2" class="slide level2" data-background-color="white">
+<h2></h2>
+
+<img data-src="images/dashboard1.png" class="r-stretch quarto-figure-center"><div class="footer">
+
+</div>
+</section>
+<section id="section-3" class="slide level2" data-background-color="white">
+<h2></h2>
+
+<img data-src="images/dashboard2.png" class="r-stretch quarto-figure-center"><div class="footer">
+
+</div>
+</section>
+<section id="section-4" class="slide level2" data-background-color="white">
+<h2></h2>
+
+<img data-src="images/dashboard3.png" class="r-stretch quarto-figure-center"><div class="footer">
+
+</div>
+</section></section>
+<section>
+<section id="resilient-models-that-are-successful-in-the-long-term" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
+<h1>Resilient models that are successful in the long term</h1>
+<aside class="notes">
+<p>We’ve talked about</p>
+<ul>
+<li>understanding what performance means for models</li>
+<li>measuring inputs and outputs</li>
+<li>how to consider both the software and statistical characteristics of a model</li>
+</ul>
+<p>These are what you need to have a model that is easier to maintain</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="learn-more" class="slide level2" data-background-image="images/image-from-rawpixel-id-8863371-original.jpg" data-background-opacity="0.3">
 <h2>Learn more</h2>
+<div>
 <ul>
-<li class="fragment"><p>Documentation at <a href="https://vetiver.rstudio.com/" class="uri">https://vetiver.rstudio.com/</a></p></li>
-<li class="fragment"><p><a href="https://juliasilge.github.io/mlops-rstudio-meetup/">Webinar by Isabel Zimmerman and me</a> for Posit Enterprise Meetup</p></li>
-<li class="fragment"><p>End-to-end demos from Posit Solution Engineering in <a href="https://github.com/sol-eng/bike_predict">R</a> and <a href="https://github.com/sol-eng/bike_predict_python">Python</a></p></li>
+<li><p>Documentation at <a href="https://vetiver.rstudio.com/" class="uri">https://vetiver.rstudio.com/</a></p></li>
+<li><p><a href="https://juliasilge.github.io/mlops-rstudio-meetup/">Webinar by Isabel Zimmerman and me</a> for Posit Enterprise Meetup</p></li>
+<li><p>End-to-end demos from Posit Solution Engineering in <a href="https://github.com/sol-eng/bike_predict">R</a> and <a href="https://github.com/sol-eng/bike_predict_python">Python</a></p></li>
 </ul>
+</div>
 </section>
-<section id="thank-you" class="slide level2">
+<section id="thank-you" class="slide level2" data-background-image="images/image-from-rawpixel-id-8863371-original.jpg" data-background-opacity="0.3">
 <h2>Thank you!</h2>
 <center>
 <p><img src="https://github.com/juliasilge.png" style="border-radius: 50%;" width="300px"></p>
@@ -370,12 +799,12 @@
 <p><a href="https://juliasilge.com/"><i class="fa-solid fa-link" aria-label="link"></i> juliasilge.com</a></p>
 </center>
 <div class="footer">
-<p>tktk image by <a href="https://www.rawpixel.com/" class="uri">https://www.rawpixel.com/</a></p>
+<p>Image credits: <a href="https://unsplash.com/photos/2qCX0SsSwzs">Mohammed Gadi</a>, <a href="https://www.rawpixel.com/image/8863371/image-art-public-domain-woman">Albert Edelfelt</a>, <a href="https://www.flickr.com/photos/bergen_public_library/sets/72157633827993925">Bergen Public Libray</a></p>
 </div>
 <div class="footer footer-default">
 <p><a href="https://juliasilge.github.io/ml-maintenance-2023" class="uri">https://juliasilge.github.io/ml-maintenance-2023</a></p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
