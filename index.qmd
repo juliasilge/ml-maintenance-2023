@@ -52,6 +52,8 @@ knitr:
 ::: {.notes}
 Never-ending laundry process
 
+What is ML model?
+
 New load of laundry -- when and how to retrain model
 
 All software products need to be maintained, but models are both a software artifact *and* a statistical artifact
@@ -152,20 +154,19 @@ Very concretely, we measure this through summary statistics, through visualizati
 library(tidymodels)
 theme_set(silgelib::theme_roboto())
 data(diamonds)
-diamond_split <- initial_split(diamonds)
+diamond_split <- diamonds |> filter(x > 0.2) |> initial_split()
 diamond_train <- training(diamond_split)
 diamond_test <- testing(diamond_split)
 
 p <- 
-  diamond_test |> 
-  filter(x > 0.5) |> 
-  ggplot(aes(x)) +
-  geom_density(adjust = 1.5, linewidth = 1.2, alpha = 0.4, fill = "#e7ad52", color = "#e7ad52") +
-  labs(x = "one of your predictors")
+  ggplot(diamond_test, aes(x)) +
+  geom_density(adjust = 2, linewidth = 1.2, alpha = 0.4, fill = "#e7ad52", color = "#e7ad52") +
+  labs(x = "one of your predictors") +
+  scale_x_continuous(limits = c(3, 12)) +
+  scale_y_continuous(limits = c(NA, 0.4))
 
 p
 ```
-
 
 
 # Monitor your inputs {background-color="white"}
@@ -173,8 +174,8 @@ p
 ```{r}
 #| echo: false
 #| fig-align: center
-x_mean <- mean(diamond_train$x)
-p + geom_vline(xintercept = x_mean, color = "#011520", linewidth = 1.5, lty = 2)
+p + geom_density(data = diamond_train,
+                 adjust = 2, linewidth = 1.2, alpha = 0.4, fill = "#011520", color = "#011520")
 ```
 
 ::: {.notes}
@@ -186,7 +187,8 @@ We can make this kind of comparison visually, or we can use a statistical test
 ```{r}
 #| echo: false
 #| fig-align: center
-p + geom_vline(xintercept = x_mean + 1.7, color = "#011520", linewidth = 1.5, lty = 2)
+p + geom_density(data = diamond_train, aes(15.3 - x),
+                 adjust = 2, linewidth = 1.2, alpha = 0.4, fill = "#011520", color = "#011520")
 ```
 
 ::: {.notes}
