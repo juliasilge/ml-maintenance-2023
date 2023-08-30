@@ -426,8 +426,9 @@
 </div>
 <aside class="notes">
 <p>Never-ending laundry process</p>
-<p>We need to decide when and how to retrain model</p>
-<p>We need to measure model performance</p>
+<p>New load of laundry – when and how to retrain model</p>
+<p>All software products need to be maintained, but models are both a software artifact <em>and</em> a statistical artifact</p>
+<p>Unlike something that is “only” a software product, you could, say, retrain your model with new data and change its statistical properties without changing its software properties</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -444,9 +445,9 @@
 <section id="what-does-performance-mean" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
 <h1>What does performance mean?</h1>
 <aside class="notes">
-<p>All software products need to be maintained, but models are both a software artifact <em>and</em> a statistical artifact</p>
-<p>Unlike something that is “only” a software product, you could, say, retrain your model with new data and change its statistical properties without changing its software properties</p>
-<p>Deciding when and how to retrain is part of this model maintenance process, and one of the most basic prerequisites for model maintenance is monitoring the model’s performance</p>
+<p>When we talk about software or statistical properties, we’re really talking about performance</p>
+<p>One of the most basic prerequisites for model maintenance is monitoring the model’s performance</p>
+<p>Measuring model performance allows us to say:</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -538,7 +539,7 @@
 <section id="failures-in-statistical-performance-can-be-silent" class="title-slide slide level1 center" data-background-image="images/image-from-rawpixel-id-8863371-original.jpg" data-background-opacity="0.4">
 <h1>Failures in statistical performance can be <em>silent</em></h1>
 <aside class="notes">
-<p>How bad can this be? very bad</p>
+<p>Statistical properties of a model have unique tendencies toward silence</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -571,11 +572,11 @@
 
 <section id="data-drift" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
 <h1>DATA DRIFT</h1>
-<div class="fragment">
-<p>Monitor your <strong>inputs</strong></p>
 <aside class="notes">
 <p>Let’s say I run a laundry service, and I have built a model to predict someone’s likelihood to become my customer</p>
 <p>I use a bunch of predictors, like how many loads of laundry they need to do each month, their income, whether they live in a house or apartment, and a bunch of other things</p>
+<p>Data drift is about drift or change in these inputs, compared to what we had when we trained the model.</p>
+<p>Very concretely, we measure this through summary statistics, through visualization</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -587,7 +588,6 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
 
 <section id="monitor-your-inputs" class="title-slide slide level1 center" data-background-color="white">
@@ -598,7 +598,20 @@
 <section id="monitor-your-inputs-1" class="title-slide slide level1 center" data-background-color="white">
 <h1>Monitor your inputs</h1>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>We can make this kind of comparison visually, or we can use a statistical test</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 
 <section id="monitor-your-inputs-2" class="title-slide slide level1 center" data-background-color="white">
 <h1>Monitor your inputs</h1>
@@ -688,7 +701,7 @@
 </section>
 <section id="feedback-loops" class="slide level2">
 <h2>Feedback loops 🔁</h2>
-<p>Deployment of an ML model may <em>alter</em> the training data</p>
+<p>Deployment of an ML model may <em>cause</em> data and/or concept drift</p>
 <div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -709,7 +722,6 @@
 </div>
 <aside class="notes">
 <p>Users take some action as a result of a prediction, users rate or correct the quality of a prediction, produce feedback automatically</p>
-<p>Example with Chicago data</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

@@ -52,19 +52,21 @@ knitr:
 ::: {.notes}
 Never-ending laundry process
 
-We need to decide when and how to retrain model
+New load of laundry -- when and how to retrain model
 
-We need to measure model performance
+All software products need to be maintained, but models are both a software artifact *and* a statistical artifact
+
+Unlike something that is "only" a software product, you could, say, retrain your model with new data and change its statistical properties without changing its software properties
 :::
 
 # What does performance mean? {background-image="images/end_paper.jpg" background-opacity=0.2}
 
 ::: {.notes}
-All software products need to be maintained, but models are both a software artifact *and* a statistical artifact
+When we talk about software or statistical properties, we're really talking about performance
 
-Unlike something that is "only" a software product, you could, say, retrain your model with new data and change its statistical properties without changing its software properties
+One of the most basic prerequisites for model maintenance is monitoring the model's performance
 
-Deciding when and how to retrain is part of this model maintenance process, and one of the most basic prerequisites for model maintenance is monitoring the model's performance
+Measuring model performance allows us to say:
 :::
 
 ## My model is performing well!
@@ -121,7 +123,7 @@ As data practitioners, we focus on monitoring statistical performance
 # Failures in statistical performance can be *silent* {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
 
 ::: {.notes}
-How bad can this be? very bad
+Statistical properties of a model have unique tendencies toward silence
 :::
 
 # MODEL DRIFT {background-image="images/end_paper.jpg" background-opacity=0.2}
@@ -136,6 +138,10 @@ data drift vs. concept drift
 Let's say I run a laundry service, and I have built a model to predict someone's likelihood to become my customer
 
 I use a bunch of predictors, like how many loads of laundry they need to do each month, their income, whether they live in a house or apartment, and a bunch of other things
+
+Data drift is about drift or change in these inputs, compared to what we had when we trained the model.
+
+Very concretely, we measure this through summary statistics, through visualization
 :::
 
 # Monitor your inputs {background-color="white"}
@@ -160,6 +166,8 @@ p <-
 p
 ```
 
+
+
 # Monitor your inputs {background-color="white"}
 
 ```{r}
@@ -168,6 +176,10 @@ p
 x_mean <- mean(diamond_train$x)
 p + geom_vline(xintercept = x_mean, color = "#011520", linewidth = 1.5, lty = 2)
 ```
+
+::: {.notes}
+We can make this kind of comparison visually, or we can use a statistical test
+:::
 
 # Monitor your inputs {background-color="white"}
 
@@ -235,7 +247,7 @@ laundry_service_monitoring |>
 
 ## Feedback loops 🔁
 
-Deployment of an ML model may *alter* the training data 
+Deployment of an ML model may *cause* data and/or concept drift
 
 . . .
 
@@ -256,8 +268,6 @@ Deployment of an ML model may *alter* the training data
 
 ::: {.notes}
 Users take some action as a result of a prediction, users rate or correct the quality of a prediction, produce feedback automatically
-
-Example with Chicago data
 :::
 
 # Stages of model monitoring maturity
