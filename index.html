@@ -426,7 +426,6 @@
 </div>
 <aside class="notes">
 <p>Never-ending laundry process</p>
-<p>What is ML model?</p>
 <p>New load of laundry – when and how to retrain model</p>
 <p>All software products need to be maintained, but models are both a software artifact <em>and</em> a statistical artifact</p>
 <p>Unlike something that is “only” a software product, you could, say, retrain your model with new data and change its statistical properties without changing its software properties</p>
@@ -483,19 +482,6 @@
 </div>
 </div>
 </div>
-<aside class="notes">
-<p>“We aren’t even talking about the same thing”</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </div>
 </section>
 <section id="my-model-is-performing-well-1" class="slide level2">
@@ -557,7 +543,7 @@
 <section id="model-drift" class="title-slide slide level1 center" data-background-image="images/end_paper.jpg" data-background-opacity="0.2">
 <h1>MODEL DRIFT</h1>
 <aside class="notes">
-<p>data drift vs.&nbsp;concept drift</p>
+<p>data drift + concept drift</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -713,7 +699,7 @@
 <ul>
 <li class="fragment">Movie recommendation systems on Netflix, Disney+, Hulu</li>
 <li class="fragment">Identifying fraudulent credit card transactions at Stripe</li>
-<li class="fragment">Recidivism models</li>
+<li class="fragment">Predictive policing models</li>
 </ul>
 </div>
 </div>
@@ -776,8 +762,8 @@
 <p>We’ve talked about</p>
 <ul>
 <li>understanding what performance means for models</li>
-<li>measuring inputs and outputs</li>
 <li>how to consider both the software and statistical characteristics of a model</li>
+<li>measuring inputs and outputs to get a handle on drift</li>
 </ul>
 <p>These are what you need to have a model that is easier to maintain</p>
 <style type="text/css">

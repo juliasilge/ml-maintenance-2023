@@ -52,8 +52,6 @@ knitr:
 ::: {.notes}
 Never-ending laundry process
 
-What is ML model?
-
 New load of laundry -- when and how to retrain model
 
 All software products need to be maintained, but models are both a software artifact *and* a statistical artifact
@@ -92,9 +90,6 @@ Measuring model performance allows us to say:
 
 :::
 
-::: {.notes}
-"We aren't even talking about the same thing"
-:::
 
 ## My model is performing well! 
 
@@ -131,7 +126,7 @@ Statistical properties of a model have unique tendencies toward silence
 # MODEL DRIFT {background-image="images/end_paper.jpg" background-opacity=0.2}
 
 :::{.notes}
-data drift vs. concept drift
+data drift + concept drift
 :::
 
 # DATA DRIFT {background-image="images/end_paper.jpg" background-opacity=0.2}
@@ -259,7 +254,7 @@ Deployment of an ML model may *cause* data and/or concept drift
 
 - Movie recommendation systems on Netflix, Disney+, Hulu
 - Identifying fraudulent credit card transactions at Stripe
-- Recidivism models
+- Predictive policing models
 
 :::
 
@@ -312,8 +307,8 @@ Users take some action as a result of a prediction, users rate or correct the qu
 We've talked about 
 
 - understanding what performance means for models 
-- measuring inputs and outputs
 - how to consider both the software and statistical characteristics of a model
+- measuring inputs and outputs to get a handle on drift
 
 These are what you need to have a model that is easier to maintain
 :::
