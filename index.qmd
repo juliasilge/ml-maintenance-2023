@@ -43,19 +43,32 @@ knitr:
 
 # Maintaining ML models is NOTHING LIKE THIS  {background-image="images/mohammed-gadi-2qCX0SsSwzs-unsplash.jpg" background-opacity=0.2}
 
-##  {background-image="images/image-from-rawpixel-id-8863371-original.jpg"}
+#  {background-image="images/image-from-rawpixel-id-8863371-original.jpg"}
 
 :::footer
 :::
 
-
 ::: {.notes}
 Never-ending laundry process
+:::
 
+# Maintaining ML models is never done {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
+
+:::footer
+:::
+
+::: {.notes}
 New load of laundry -- when and how to retrain model
 
 All software products need to be maintained, but models are both a software artifact *and* a statistical artifact
+:::
 
+# Both software and statistical products {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.4}
+
+:::footer
+:::
+
+::: {.notes}
 Unlike something that is "only" a software product, you could, say, retrain your model with new data and change its statistical properties without changing its software properties
 :::
 
