@@ -337,6 +337,10 @@ These are what you need to have a model that is easier to maintain
 -   End-to-end demos from Posit Solution Engineering in [R](https://github.com/sol-eng/bike_predict) and [Python](https://github.com/sol-eng/bike_predict_python)
 :::
 
+. . .
+
+Post questions at [pos.it/slido-CD](https://pos.it/slido-CD) 🎯
+
 
 ## Thank you! {background-image="images/image-from-rawpixel-id-8863371-original.jpg" background-opacity=0.3}
 
